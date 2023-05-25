@@ -13,8 +13,11 @@ app.use(express.urlencoded({ extended : true }))
 app.use('/api/auth', require('./routers/auth'))
 app.use('/api/notes', require('./routers/notes'))
 
-app.get('/', async (req, res) => {
-    res.send('yo')
+app.get('*', async (req, res) => {
+    res.status(200).json({
+        success: false,
+        msg: 'bad request'
+    })
 })
 
 const port = process.env.URL || 5000
