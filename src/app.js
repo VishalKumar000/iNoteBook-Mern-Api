@@ -13,5 +13,9 @@ app.use(express.urlencoded({ extended : true }))
 app.use('/api/auth', require('./routers/auth'))
 app.use('/api/notes', require('./routers/notes'))
 
+app.get('/', async (req, res) => {
+    res.send('yo')
+})
+
 const port = process.env.URL || 5000
 app.listen(port, () => console.log(port))
