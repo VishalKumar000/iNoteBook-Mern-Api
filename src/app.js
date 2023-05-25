@@ -13,5 +13,5 @@ app.use(express.urlencoded({ extended : true }))
 app.use('/api/auth', require('./routers/auth'))
 app.use('/api/notes', require('./routers/notes'))
 
-const port = 5000
-app.listen(port, () => console.log(`http://localhost:${port}`))
+const port = process.env.URL || 5000
+app.listen(port, () => console.log(port))

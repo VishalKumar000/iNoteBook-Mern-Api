@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect(`mongodb://127.0.0.1:27017/iNotebook`)
+mongoose.connect(`mongodb+srv://vishal:123@cluster0.sula7wu.mongodb.net/`)
 .then(() => console.log('🔥'))
 .catch((err) => console.log(`error ${err}`))
 
